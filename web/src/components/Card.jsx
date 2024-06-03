@@ -7,7 +7,7 @@ const Card = ({inputData}) => {
       </h2>
 
       <div className="card__author">
-        <div className="card__authorPhoto"><img className="card__authorPhoto--img" src={inputData.photo} alt="" />
+        <div className="card__authorPhoto">{inputData.photo && <img className="card__authorPhoto--img" src={inputData.photo} alt="" />}
             
             </div>
         <p className="card__job"> {inputData.job || "Full stack Developer"}</p>
