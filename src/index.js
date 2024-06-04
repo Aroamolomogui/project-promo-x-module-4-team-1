@@ -53,6 +53,16 @@ server.get('/list',(req, res) => {
 res.json({data: project, count: project.length, success:true
 })
 });
+
+// //clicar btn de guardar proyecto
+// server.post("/addProject", (req,res)=>{
+//     res.json({cardUrl: "http//dayana/detailProject/123456"})
+// })
+
+// //motores de plantilla
+// server.get("/detailProject", ()=>{
+//     //renderizar la pagina del detalle desde el servidor
+// })
 server.listen(port, ()=>{
     console.log(`El servidor se esta ejecutando en el purto ${port}`);
 });
