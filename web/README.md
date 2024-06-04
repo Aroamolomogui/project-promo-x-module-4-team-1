@@ -52,4 +52,4 @@ La aplicación permitirá a la usuaria introducir la información en un formular
 - Se mostrará esta URL para que la usuaria verifique si la tarjeta está bien definida.
 
 
-holiiss
+
