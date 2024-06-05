@@ -64,7 +64,7 @@ res.json({data: project, count: project.length, success:true
 //     //renderizar la pagina del detalle desde el servidor
 // })
 server.listen(port, ()=>{
-    console.log(`El servidor se esta ejecutando en el purto ${port}`);
+    console.log(`El servidor se esta ejecutando en el puerto http://localhost:${port}/`);
 });
 
 const staticUrl= './src/public';
