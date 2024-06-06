@@ -1,28 +1,60 @@
 import { useEffect, useState } from "react";
 
-
 function Catalogue() {
-  
-const [listProject, setListProject] = useState ([]);
+  const [listProject, setListProject] = useState([]);
 
-useEffect(()=>{
-  fetch("http://localhost:5001/list")
-  .then((response) => response.json())
-  .then(info=> {
-    setListProject(info.data)
-  })
-}, [])
+  useEffect(() => {
+    fetch("http://localhost:5001/list")
+      .then((response) => response.json())
+      .then((info) => {
+        setListProject(info.data);
+      });
+  }, []);
 
-    return <section className="catalogue">
+  const html = listProject.map((item, i) => {
+    return (
+        <article className="card__catalogue" key={i}>
+          <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
+
+          <div className="card__author">
+            <div className="card__authorPhoto"></div>
+            <p className="card__job">
+            {item.job}
+            </p>
+            <h3 className="card__name">{item.autor}</h3>
+          </div>
+      
+          <div className="card__project">            
+            <h3 className="card__name">{item.name}</h3>
+            <p className="card__slogan">{item.slogan}</p>
+            <h3 className="card__descriptionTitle">Product description</h3>
+            <p className="card__description">{item.desc}</p>
+
+            <div className="card__technicalInfo">
+              <p className="card__technologies">{item.technologies}</p>
+          
+              <a className="icon icon__www" href="#" title="Haz click para ver el proyecto online">
+              {item.demo}
+              </a>
+              <a className="icon icon__github" href="#" title="Haz click para ver el código del proyecto">
+              {item.repo}
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+    //   <div key={i} className="card__catalogue">
+    //     <p> Nombre de la autora: {item.autor}</p>
+    //   </div>
+    );
+  });
+  return (
+    <section className="catalogue">
       <h3 className="title__catalogue">Catálogo de Proyectos</h3>
-     <article className="card__container">
-      <div className="card__catalogue">Proyecto 1</div>
-      <div className="card__catalogue">Proyecto 2</div>
-      <div className="card__catalogue">Proyecto 3</div>
-      <div className="card__catalogue">Proyecto 4</div>
-      </article> 
-    </section>;
-  }
-  
-  export default Catalogue;
-  
+      <article className="card__container">{html}</article>
+    </section>
+  );
+}
+
+export default Catalogue;
