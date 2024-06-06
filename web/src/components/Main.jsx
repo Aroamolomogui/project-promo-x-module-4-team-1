@@ -30,7 +30,7 @@ function Main () {
     setInputData({ ...inputData, [idInput]: url });
   };
   const createCard = () => {
-    fetch("https://dev.adalab.es/api/projectCard", {
+    fetch("http://localhost:5001/addProject", {
       method: "POST",
       body: JSON.stringify(inputData),
       headers: {
