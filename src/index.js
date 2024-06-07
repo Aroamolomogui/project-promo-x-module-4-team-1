@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
-
+require('dotenv').config();
 //crear el servidor
 const server = express();
 server.use(cors());
@@ -11,10 +11,10 @@ const port = 5001;
 //conectarme a la base de datos
 async function connectDB() {
   const conex = await mysql.createConnection({
-    host: "sql.freedb.tech",
-    user: "freedb_AdaPro",
-    password: "8&Kvk38?33n$#*m",
-    database: "freedb_AdaProTeams",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_DATABASE,
   });
   await conex.connect();
   return conex;
@@ -22,42 +22,8 @@ async function connectDB() {
 
 //endpoint que nos muestra todos los proyectos
 server.get("/list", async (req, res) => {
-  // const project =[{
-  //     name: "Otilia",
-  //     slogan: "Diseños exclusivos",
-  //     technologies: "React",
-  //     repo: "/blabla",
-  //     demo: "/blabla",
-  //     desc: "Un proyecto que es simple y llanamente mazo guay",
-  //     autor: "Fulanita de tal",
-  //     job: "Programadora",
-  //     image: "#",
-  //     photo: "#",
 
-  // }, {
-  //     name: "Proyecto 1",
-  //     slogan: "Solución innovadora para la productividad",
-  //     technologies: "React, Node.js, MongoDB",
-  //     repo: "https://github.com/usuario/proyecto1",
-  //     demo: "https://proyecto1.com",
-  //     desc: "Este proyecto es una aplicación web que ayuda a mejorar la gestión del tiempo y la organización de tareas.",
-  //     autor: "Juan Pérez",
-  //     job: "Desarrollador front-end",
-  //     image: "proyecto1.png",
-  //     photo: "juan_perez.jpg"
 
-  // }, {
-  //     name: "Aplicación de Clima",
-  //     slogan: "Consulta el tiempo en cualquier lugar",
-  //     technologies: "Vue.js, API de Clima",
-  //     repo: "https://github.com/usuario/app-clima",
-  //     demo: "https://app-clima.com",
-  //     desc: "Esta aplicación te permite consultar el pronóstico del tiempo en diferentes ciudades.",
-  //     autor: "María Gómez",
-  //     job: "Desarrolladora full-stack",
-  //     image: "app-clima.png",
-  //     photo: "maria_gomez.jpg"
-  // }];
   const conn = await connectDB();
   const select = `SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser;`;
   const [results] = await conn.query(select);
@@ -65,6 +31,7 @@ server.get("/list", async (req, res) => {
 
   conn.end();
 });
+
 
 //clicar btn de guardar proyecto
 server.post("/addProject", async (req, res) => {
@@ -97,9 +64,15 @@ server.post("/addProject", async (req, res) => {
 });
 
 // //motores de plantilla
-// server.get("/detailProject", ()=>{
-//     //renderizar la pagina del detalle desde el servidor
-// })
+server.get("/detailProject/:id", async(req,res)=>{
+    const conn = await connectDB();
+    const { id } = req.params;
+    const findProject = `SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser WHERE user.idUser = ?`;
+    const [resultsProject] = await conn.query (findProject, [id]);
+
+    res.render ('project', {details: result [0]});
+
+})
 server.listen(port, () => {
   console.log(
     `El servidor se esta ejecutando en el puerto http://localhost:${port}/`

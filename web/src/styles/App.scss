@@ -631,7 +631,7 @@ fieldset {
 .card__catalogue {
 	display: grid;
 	grid-template-columns: 40% 60%;
-
+	height: 200px;
 	color: var(--color-black);
 	font: var(--font-card-text);
 
