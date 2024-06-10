@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function CardPreview({inputData}) {
   return (
     <section className="preview">
-      <div className="projectImage"> <img className="projectImage--img" src={inputData.image} alt="" /> </div>
+      <div className="projectImage"> {inputData.image && <img className="projectImage--img" src={inputData.image} alt="" />} </div>
       <Card inputData={inputData} />
     </section>
   );

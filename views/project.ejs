@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class="card__body">
+    <article class="card__catalogue" key={i}>
+        <h2 class="card__projectTitle"><span class="card__projectTitle--text">Personal project card</span></h2>
+
+        <div class="card__author">
+          <div class="card__authorPhoto"></div>
+          <p class="card__job">
+          <%= details.job %>
+          </p>
+          <h3 class="card__name"><%= details.autor %></h3>
+        </div>
+    
+        <div class="card__project">            
+          <h3 class="card__name"><%= details.name %></h3>
+          <p class="card__slogan"><%= details.slogan %></p>
+          <h3 class="card__descriptionTitle">Product description</h3>
+          <p class="card__description"><%= details.desc %></p>
+
+          <div class="card__technicalInfo">
+            <p class="card__technologies"><%= details.technologies %></p>
+        
+            <a class="icon icon__www" href="#" title="Haz click para ver el proyecto online">
+                <%= details.demo %>
+       
+            </a>
+            <a class="icon icon__github" href="#" title="Haz click para ver el código del proyecto">
+                <%= details.repo %>
+            </a>
+          </div>
+        </div>
+      </article>
+</body>
+</html>

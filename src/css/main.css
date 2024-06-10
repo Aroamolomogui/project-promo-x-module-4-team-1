@@ -1,0 +1,172 @@
+
+:root {
+    /* COLORS */
+  
+    --color-black: #000000;
+    --color-black-80: rgba(0, 0, 0, 0.8);
+    --color-greyish-brown: #505050;
+    --color-greyish-brown-88: rgba(62, 62, 62, 0.88);
+    --color-dusk: #403a5f;
+    --color-greyish-brown-two: #575757;
+    --color-dark: #302c42;
+    --color-error: #568c9a;
+    --color-warm-grey: #909090;
+    --color-white: #ffffff;
+    --color-dark-lilac: #8176af;
+    --color-white-50: rgba(255, 255, 255, 0.5);
+  
+    /* FONTS */
+  
+    --font-title-brand: 300 1.4rem "Poppins", sans-serif;
+    --font-title-biggest: bold 3rem "Montserrat", sans-serif;
+    --font-title-big: bold 2rem "Montserrat", sans-serif;
+    --font-title-medium: 300 1.5rem "Montserrat", sans-serif;
+    --font-text-big: normal 1.2rem "Montserrat", sans-serif;
+    --font-normal: normal 10px "Montserrat", sans-serif;
+    --font-button: bold 1rem "Montserrat", sans-serif;
+    --font-card-text: 300 0.8rem "Poppins", sans-serif;
+    --font-card-section: 300 0.8rem "Poppins", sans-serif;
+    --font-card-title: 500 1.2rem "Poppins", sans-serif;
+    --font-card-subtitle: 400 1.1rem "Poppins", sans-serif;
+    --font-card-tech: 500 1rem "Catamaran", sans-serif;
+  }
+  
+  :root {
+    font: var(--font-normal); /* font-size: 10px; */
+    color: var(--color-white);
+  }
+
+  .card__body{
+    background-color: var(--color-dark);
+  }
+.card__catalogue {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	height: 200px;
+	color: var(--color-black);
+	font: var(--font-card-text);
+
+	border-radius: 20px;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border-style: solid;
+	border-width: 1px;
+	border-image-source: linear-gradient(
+		to bottom,
+		var(--color-white) 0%,
+		rgba(0, 0, 0, 0)
+	);
+	border-image-slice: 1;
+	background-image: linear-gradient(
+			to bottom,
+			var(--color-white),
+			var(--color-white)
+		),
+		linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+.card__catalogue .card__projectTitle {
+	grid-column: 2;
+	position: relative;
+	margin: 15px 10px 1rem 0;
+	text-align: center;
+	text-transform: capitalize;
+
+	font: var(--font-card-section);
+}
+
+.card__catalogue .card__projectTitle::before {
+	content: "";
+	position: absolute;
+	top: calc(50% - 1px);
+	bottom: calc(50% - 1px);
+	left: 0;
+	right: 0;
+	z-index: 0;
+
+	background-image: linear-gradient(
+		to right,
+		white,
+		#232323 15%,
+		var(--color-black),
+		#232323 85%,
+		white
+	);
+}
+
+.card__catalogue .card__projectTitle--text {
+	position: relative;
+	padding-inline: 0.1em;
+	z-index: 1;
+	background-color: var(--color-white);
+}
+
+.card__catalogue .card__author {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.card__catalogue .card__authorPhoto {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	background-image: url("../images/avatar.webp");
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 0.8rem;
+    &--img{
+        width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		background-position: center;
+		background-size: cover;
+		margin-bottom: 0.8rem;
+    }
+}
+
+.card__catalogue .card__job {
+	margin-bottom: 0.2rem;
+}
+
+.card__catalogue .card__name {
+	font: var(--font-card-title);
+	margin-bottom: 0.2rem;
+	text-align: center;
+	padding-top: 0.5rem;
+}
+
+.card__catalogue .card__nameProject {
+	font: var(--font-card-title);
+	margin-bottom: 0.2rem;
+}
+
+.card__catalogue .card__project {
+	margin-right: 10px;
+}
+
+.card__catalogue .card__slogan {
+	font: var(--font-card-subtitle);
+	margin-top: -0.2rem;
+	margin-bottom: 0.8rem;
+}
+
+.card__catalogue .card__descriptionTitle {
+	font-weight: inherit;
+	text-transform: capitalize;
+}
+
+.card__catalogue .card__technicalInfo {
+	display: grid;
+	grid-template-columns: 1fr 2rem 2rem;
+	gap: 0.5em;
+
+	margin-block: 1.8rem;
+}
+
+.card__catalogue .card__technologies {
+	font: var(--font-card-tech);
+}
