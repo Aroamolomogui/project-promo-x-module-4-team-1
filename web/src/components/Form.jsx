@@ -8,28 +8,31 @@ function Form({
   createdCard,
   urlCard,
   hidden,
+  setError
 }) {
+  const validationLinks = (input) => {
+    return input.includes("https://") ? "hidden" : "";
+  };
+
   const handleChange = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
     changeInputData(id, value);
     localStorage.setItem("project", JSON.stringify(inputData));
-
-    //falla porque no encuentra el setInputData en el componente
   };
   const handleClick = () => {
-    // if (
-    //   inputData.name !=="" &&
-    //   inputData.slogan !== "" &&
-    //   inputData.technologies !== "" &&
-    //   inputData.repo !== "" &&
-    //   inputData.demo !== "" &&
-    //   inputData.desc !== "" &&
-    //   inputData.autor !== "" &&
-    //   inputData.job !== "" &&
-    //   inputData.image !== "" &&
-    //   inputData.photo !== ""
-    // ) {
+    if (
+      inputData.name !== "" &&
+      inputData.slogan !== "" &&
+      inputData.technologies !== "" &&
+      inputData.repo !== "" &&
+      inputData.demo !== "" &&
+      inputData.desc !== "" &&
+      inputData.autor !== "" &&
+      inputData.job !== "" &&
+      inputData.image !== "" &&
+      inputData.photo !== ""
+    ) {
       createdCard();
       setInputData({
         name: "",
@@ -44,7 +47,9 @@ function Form({
         photo: "",
       });
       localStorage.removeItem("project");
-   // }
+    } else {
+        setError("Por favor, introduce todos los datos")
+    }
   };
 
   return (
@@ -66,7 +71,7 @@ function Form({
           placeholder="Nombre del proyecto"
           onChange={handleChange}
           value={inputData.name}
-          
+          required
         />
 
         <input
@@ -77,7 +82,7 @@ function Form({
           placeholder="Slogan"
           onChange={handleChange}
           value={inputData.slogan}
-          
+          required
         />
         <div className="addForm__2col">
           <input
@@ -85,21 +90,26 @@ function Form({
             type="url"
             name="repo"
             id="repo"
-            placeholder="nombre-de-tu-repositorio"
+            placeholder="https://tu-repositorio"
             onChange={handleChange}
             value={inputData.repo}
-            
+            required
           />
+          <p className={`validation-text ${validationLinks(inputData.repo)}`}>
+            Introduce una URL válida
+          </p>
           <input
             className="addForm__input"
             type="url"
             name="demo"
             id="demo"
-            placeholder="Demo"
+            placeholder="https://tu-demo"
             onChange={handleChange}
             value={inputData.demo}
-            
           />
+          <p className={`validation-text ${validationLinks(inputData.demo)}`}>
+            Introduce una URL válida
+          </p>
         </div>
         <input
           className="addForm__input"
@@ -109,7 +119,7 @@ function Form({
           placeholder="Tecnologías"
           onChange={handleChange}
           value={inputData.technologies}
-          
+          required
         />
         <textarea
           className="addForm__input"
@@ -120,7 +130,8 @@ function Form({
           rows="5"
           onChange={handleChange}
           value={inputData.desc}
-          
+          maxLength="200"
+          required
         ></textarea>
       </fieldset>
 
@@ -134,7 +145,7 @@ function Form({
           placeholder="Nombre"
           onChange={handleChange}
           value={inputData.autor}
-          
+          required
         />
         <input
           className="addForm__input"
@@ -144,7 +155,7 @@ function Form({
           placeholder="Trabajo"
           onChange={handleChange}
           value={inputData.job}
-          
+          required
         />
       </fieldset>
 
@@ -153,11 +164,13 @@ function Form({
           text="Subir foto del proyecto"
           btnOther="image"
           updateAvatar={updateAvatar}
+          required
         />
         <Button
           text="Subir foto de la autora"
           btnOther="photo"
           updateAvatar={updateAvatar}
+          required
         />
         <button className="button--large on" onClick={handleClick}>
           Guardar proyecto
@@ -178,5 +191,6 @@ Form.propTypes = {
   createdCard: PropTypes.func,
   urlCard: PropTypes.string,
   hidden: PropTypes.string,
+  setError: PropTypes.func
 };
 export default Form;

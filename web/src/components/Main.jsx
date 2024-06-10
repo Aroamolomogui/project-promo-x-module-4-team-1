@@ -51,49 +51,49 @@ function Main () {
       });
   };
 
-  //Validación campos formularios
-  const dataError = () => {
-    //se crea un array vacío llamado errorMessages que se utilizará para almacenar los mensajes de error
-    const errorMessages = [];
+//   //Validación campos formularios
+//   const dataError = () => {
+//     //se crea un array vacío llamado errorMessages que se utilizará para almacenar los mensajes de error
+//     const errorMessages = [];
 
-    //Si una condición se cumple (por ejemplo, error.includes("name")), se agrega un elemento <span> con el mensaje de error correspondiente al array errorMessages utilizando el método push().
+//     //Si una condición se cumple (por ejemplo, error.includes("name")), se agrega un elemento <span> con el mensaje de error correspondiente al array errorMessages utilizando el método push().
 
-    if (error.includes("name")) {
-      errorMessages.push(<span>El campo Nombre del proyecto es obligatorio.</span>);
-    }
-    if (error.includes("slogan")) {
-      errorMessages.push(<span>El campo Slogan es obligatorio.</span>);
-    }
-    if (error.includes("technologies")) {
-      errorMessages.push(<span>El campo Tecnologías es obligatorio.</span>);
-    }
-    if (error.includes("repo")) {
-      errorMessages.push(<span>El campo nombre-de-tu-repositorio es obligatorio.</span>);
-    }
-    if (error.includes("demo")) {
-      errorMessages.push(<span>El campo Demo es obligatorio.</span>);
-    }
-    if (error.includes("desc")) {
-      errorMessages.push(<span>El campo Descripción es obligatorio.</span>);
-    }
-    if (error.includes("autor")) {
-      errorMessages.push(<span>El campo Nombre es obligatorio.</span>);
-    }
-    if (error.includes("job")) {
-      errorMessages.push(<span>El campo Trabajo es obligatorio.</span>);
-    }
-    if (error.includes("image")) {
-      errorMessages.push(<span>Debes subir una foto de tu proyecto.</span>);
-    }
-    if (error.includes("photo")) {
-      errorMessages.push(<span>Debes subir una foto de la autora.</span>);
-    }
+//     if (error.includes("name")) {
+//       errorMessages.push(<span>El campo Nombre del proyecto es obligatorio.</span>);
+//     }
+//     if (error.includes("slogan")) {
+//       errorMessages.push(<span>El campo Slogan es obligatorio.</span>);
+//     }
+//     if (error.includes("technologies")) {
+//       errorMessages.push(<span>El campo Tecnologías es obligatorio.</span>);
+//     }
+//     if (error.includes("repo")) {
+//       errorMessages.push(<span>El campo nombre-de-tu-repositorio es obligatorio.</span>);
+//     }
+//     if (error.includes("demo")) {
+//       errorMessages.push(<span>El campo Demo es obligatorio.</span>);
+//     }
+//     if (error.includes("desc")) {
+//       errorMessages.push(<span>El campo Descripción es obligatorio.</span>);
+//     }
+//     if (error.includes("autor")) {
+//       errorMessages.push(<span>El campo Nombre es obligatorio.</span>);
+//     }
+//     if (error.includes("job")) {
+//       errorMessages.push(<span>El campo Trabajo es obligatorio.</span>);
+//     }
+//     if (error.includes("image")) {
+//       errorMessages.push(<span>Debes subir una foto de tu proyecto.</span>);
+//     }
+//     if (error.includes("photo")) {
+//       errorMessages.push(<span>Debes subir una foto de la autora.</span>);
+//     }
 
-    // la función devuelve el array errorMessages que contiene todos los mensajes de error que se han generado
-    return errorMessages;
-  };
+//     // la función devuelve el array errorMessages que contiene todos los mensajes de error que se han generado
+//     return errorMessages;
+//   };
 
-  const errorMessage = dataError();
+//   const errorMessage = dataError();
 
   return (
     <main className="main">
@@ -115,11 +115,10 @@ function Main () {
         createdCard={ createCard }
         urlCard={ urlCard }
         hidden={ hidden }
+        setError = {setError}
       />
       <section className={ error === "" ? "hidden" : "error" }>
-        { errorMessage.map((item, index) => (
-          <div key={ index }>{ item }</div>
-        )) }
+        {error}
       </section>
     </main>
   );

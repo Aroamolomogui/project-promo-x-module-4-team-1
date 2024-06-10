@@ -19,8 +19,7 @@ function Catalogue () {
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto">
-              <img src={ `${item.photo}` } alt="" />
+            <div className="card__authorPhoto">{item.photo && <img className="card__authorPhoto--img" src={item.photo} alt="" />}
             </div>
             <p className="card__job">
               { item.job }

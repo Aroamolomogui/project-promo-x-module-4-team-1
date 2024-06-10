@@ -42,7 +42,7 @@ const Card = ({inputData}) => {
           </a>
           <a
             className="icon icon__github"
-            href={`https://github.com/${inputData.repo}`} //hacer validación
+            href={inputData.repo} //hacer validación
             title="Haz click para ver el código del proyecto"
             target= '_blank'
           >

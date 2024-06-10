@@ -39,6 +39,24 @@
   .card__body{
     background-color: var(--color-dark);
   }
+
+  .card .card__authorPhoto {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-image: url("../images/avatar.webp");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0.8rem;
+    &--img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 0.8rem;
+    }
+  }
 .card__catalogue {
 	display: grid;
 	grid-template-columns: 40% 60%;
@@ -170,3 +188,19 @@
 .card__catalogue .card__technologies {
 	font: var(--font-card-tech);
 }
+.icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 var(--color-greyish-brown-two);
+  }
+  
+  .icon__www {
+    background-image: url("../images/icons/globe-solid.svg");
+  }
+  
+  .icon__github {
+    background-image: url("../images/icons/github.svg");
+  }
