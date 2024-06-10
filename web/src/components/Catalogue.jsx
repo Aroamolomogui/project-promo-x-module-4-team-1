@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Catalogue() {
+function Catalogue () {
   const [listProject, setListProject] = useState([]);
 
   useEffect(() => {
@@ -13,49 +13,51 @@ function Catalogue() {
 
   const html = listProject.map((item, i) => {
     return (
-        <a className="card__link" href={`http://localhost:5001/detailProject/${item.idUser}`} key={i}>
+      <a className="card__link" href={ `http://localhost:5001/detailProject/${item.idUser}` } key={ i }>
         <article className="card__catalogue">
- 
+
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto"></div>
+            <div className="card__authorPhoto">
+              <img src={ `${item.photo}` } alt="" />
+            </div>
             <p className="card__job">
-            {item.job}
+              { item.job }
             </p>
-            <h3 className="card__name">{item.autor}</h3>
+            <h3 className="card__name">{ item.autor }</h3>
           </div>
-      
-          <div className="card__project">            
-            <h3 className="card__name">{item.name}</h3>
-            <p className="card__slogan">{item.slogan}</p>
+
+          <div className="card__project">
+            <h3 className="card__name">{ item.name }</h3>
+            <p className="card__slogan">{ item.slogan }</p>
             <h3 className="card__descriptionTitle">Product description</h3>
-            <p className="card__description">{item.desc}</p>
+            <p className="card__description">{ item.desc }</p>
 
             <div className="card__technicalInfo">
-              <p className="card__technologies">{item.technologies}</p>
-          
+              <p className="card__technologies">{ item.technologies }</p>
+
               <a className="icon icon__www" href="#" title="Haz click para ver el proyecto online">
-              {item.demo}
+                { item.demo }
               </a>
               <a className="icon icon__github" href="#" title="Haz click para ver el código del proyecto">
-              {item.repo}
+                { item.repo }
               </a>
             </div>
           </div>
 
         </article>
-        </a>
+      </a>
 
-    //   <div key={i} className="card__catalogue">
-    //     <p> Nombre de la autora: {item.autor}</p>
-    //   </div>
+      //   <div key={i} className="card__catalogue">
+      //     <p> Nombre de la autora: {item.autor}</p>
+      //   </div>
     );
   });
   return (
     <section className="catalogue">
       <h3 className="title__catalogue">Catálogo de Proyectos</h3>
-      <article className="card__container">{html}</article>
+      <article className="card__container">{ html }</article>
     </section>
   );
 }

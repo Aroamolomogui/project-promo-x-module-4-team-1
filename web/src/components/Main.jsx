@@ -41,7 +41,7 @@ function Main () {
       .then((dataResponse) => {
         console.log(dataResponse);
         if (dataResponse.success) {
-          setUrlCard(dataResponse.cardURL);
+          setUrlCard(dataResponse.cardUrl);
           setHidden("");
           setError("");
         } else {
