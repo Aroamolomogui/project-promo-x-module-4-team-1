@@ -14,3 +14,6 @@ references user (idUser);
 SELECT project.name, user.autor
 FROM project INNER JOIN user ON project.fkUser = user.idUser
 WHERE user.idUser = 5 ;
+
+SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser;
+

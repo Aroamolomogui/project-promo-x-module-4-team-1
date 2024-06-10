@@ -1,13 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
-require('dotenv').config();
+require("dotenv").config();
 //crear el servidor
+
 const server = express();
 server.use(cors());
-server.use(express.json({limit: '15mb'}));
+server.use(express.json({ limit: "15mb" }));
 const port = 5001;
-
+server.set("view engine", "ejs");
 //conectarme a la base de datos
 async function connectDB() {
   const conex = await mysql.createConnection({
@@ -22,8 +23,6 @@ async function connectDB() {
 
 //endpoint que nos muestra todos los proyectos
 server.get("/list", async (req, res) => {
-
-
   const conn = await connectDB();
   const select = `SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser;`;
   const [results] = await conn.query(select);
@@ -31,7 +30,6 @@ server.get("/list", async (req, res) => {
 
   conn.end();
 });
-
 
 //clicar btn de guardar proyecto
 server.post("/addProject", async (req, res) => {
@@ -64,15 +62,15 @@ server.post("/addProject", async (req, res) => {
 });
 
 // //motores de plantilla
-server.get("/detailProject/:id", async(req,res)=>{
-    const conn = await connectDB();
-    const { id } = req.params;
-    const findProject = `SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser WHERE user.idUser = ?`;
-    const [resultsProject] = await conn.query (findProject, [id]);
+server.get("/detailProject/:id", async (req, res) => {
+  const conn = await connectDB();
+  const { id } = req.params;
+  const findProject = `SELECT * FROM project INNER JOIN user ON project.fkUser = user.idUser WHERE user.idUser = ?`;
+  const [resultsProject] = await conn.query(findProject, [id]);
 
-    res.render ('project', {details: result [0]});
-
-})
+  res.render("project", { details: resultsProject[0] });
+console.log(resultsProject);
+});
 server.listen(port, () => {
   console.log(
     `El servidor se esta ejecutando en el puerto http://localhost:${port}/`
@@ -81,3 +79,4 @@ server.listen(port, () => {
 
 const staticUrl = "./src/public";
 server.use(express.static(staticUrl));
+server.use(express.static("./src/css"));

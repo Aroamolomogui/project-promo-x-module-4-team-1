@@ -13,7 +13,9 @@ function Catalogue() {
 
   const html = listProject.map((item, i) => {
     return (
-        <article className="card__catalogue" key={i}>
+        <a className="card__link" href={`http://localhost:5001/detailProject/${item.idUser}`} key={i}>
+        <article className="card__catalogue">
+ 
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
@@ -41,8 +43,9 @@ function Catalogue() {
               </a>
             </div>
           </div>
-        </article>
 
+        </article>
+        </a>
 
     //   <div key={i} className="card__catalogue">
     //     <p> Nombre de la autora: {item.autor}</p>
