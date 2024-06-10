@@ -1,6 +1,6 @@
 import Button from "./Button";
 import PropTypes from "prop-types";
-function Form({
+function Form ({
   changeInputData,
   updateAvatar,
   inputData,
@@ -34,30 +34,18 @@ function Form({
       inputData.photo !== ""
     ) {
       createdCard();
-      setInputData({
-        name: "",
-        slogan: "",
-        technologies: "",
-        repo: "",
-        demo: "",
-        desc: "",
-        autor: "",
-        job: "",
-        image: "",
-        photo: "",
-      });
       localStorage.removeItem("project");
     } else {
-        setError("Por favor, introduce todos los datos")
+      setError("Por favor, introduce todos los datos")
     }
   };
 
   return (
     <form
       className="addForm"
-      onSubmit={(ev) => {
+      onSubmit={ (ev) => {
         ev.preventDefault();
-      }}
+      } }
     >
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
@@ -69,8 +57,8 @@ function Form({
           name="name"
           id="name"
           placeholder="Nombre del proyecto"
-          onChange={handleChange}
-          value={inputData.name}
+          onChange={ handleChange }
+          value={ inputData.name }
           required
         />
 
@@ -80,8 +68,8 @@ function Form({
           name="slogan"
           id="slogan"
           placeholder="Slogan"
-          onChange={handleChange}
-          value={inputData.slogan}
+          onChange={ handleChange }
+          value={ inputData.slogan }
           required
         />
         <div className="addForm__2col">
@@ -91,11 +79,11 @@ function Form({
             name="repo"
             id="repo"
             placeholder="https://tu-repositorio"
-            onChange={handleChange}
-            value={inputData.repo}
+            onChange={ handleChange }
+            value={ inputData.repo }
             required
           />
-          <p className={`validation-text ${validationLinks(inputData.repo)}`}>
+          <p className={ `validation-text ${validationLinks(inputData.repo)}` }>
             Introduce una URL válida
           </p>
           <input
@@ -104,10 +92,10 @@ function Form({
             name="demo"
             id="demo"
             placeholder="https://tu-demo"
-            onChange={handleChange}
-            value={inputData.demo}
+            onChange={ handleChange }
+            value={ inputData.demo }
           />
-          <p className={`validation-text ${validationLinks(inputData.demo)}`}>
+          <p className={ `validation-text ${validationLinks(inputData.demo)}` }>
             Introduce una URL válida
           </p>
         </div>
@@ -117,8 +105,8 @@ function Form({
           name="technologies"
           id="technologies"
           placeholder="Tecnologías"
-          onChange={handleChange}
-          value={inputData.technologies}
+          onChange={ handleChange }
+          value={ inputData.technologies }
           required
         />
         <textarea
@@ -128,8 +116,8 @@ function Form({
           id="desc"
           placeholder="Descripción"
           rows="5"
-          onChange={handleChange}
-          value={inputData.desc}
+          onChange={ handleChange }
+          value={ inputData.desc }
           maxLength="200"
           required
         ></textarea>
@@ -143,8 +131,8 @@ function Form({
           name="autor"
           id="autor"
           placeholder="Nombre"
-          onChange={handleChange}
-          value={inputData.autor}
+          onChange={ handleChange }
+          value={ inputData.autor }
           required
         />
         <input
@@ -153,8 +141,8 @@ function Form({
           name="job"
           id="job"
           placeholder="Trabajo"
-          onChange={handleChange}
-          value={inputData.job}
+          onChange={ handleChange }
+          value={ inputData.job }
           required
         />
       </fieldset>
@@ -163,20 +151,20 @@ function Form({
         <Button
           text="Subir foto del proyecto"
           btnOther="image"
-          updateAvatar={updateAvatar}
+          updateAvatar={ updateAvatar }
           required
         />
         <Button
           text="Subir foto de la autora"
           btnOther="photo"
-          updateAvatar={updateAvatar}
+          updateAvatar={ updateAvatar }
           required
         />
-        <button className="button--large on" onClick={handleClick}>
+        <button className="button--large on" onClick={ handleClick }>
           Guardar proyecto
         </button>
       </fieldset>
-      <a href={urlCard} className={`url--message ${hidden}`} target="_blank">
+      <a href={ urlCard } className={ `url--message ${hidden}` } target="_blank">
         Mira tu tarjeta
       </a>
     </form>

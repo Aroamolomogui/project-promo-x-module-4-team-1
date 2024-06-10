@@ -1,6 +1,6 @@
 import companyLogo from "../images/laptop-code-solid.svg";
-import logoSponsor from "../images/adalab.png";
-function Header() {
+import logoSponsor from "../images/adalab_white.png";
+function Header () {
   return (
     <header className="header">
       <a
@@ -10,12 +10,15 @@ function Header() {
       >
         <img
           className="header__companyLogo"
-          src={companyLogo}
+          src={ companyLogo }
           alt="Logo proyectos molones"
         />
         <h1 className="header__title">Proyectos molones</h1>
       </a>
-      <img className="logoSponsor" src={logoSponsor} alt="Logo Adalab" />
+      <a href="https://adalab.es/" target="_blank">
+        <img className="logoSponsor" src={ logoSponsor } alt="Logo Adalab" />
+      </a>
+
     </header>
   );
 }

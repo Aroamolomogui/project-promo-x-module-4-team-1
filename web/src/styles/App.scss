@@ -62,9 +62,9 @@ fieldset {
 :root {
 	font: var(--font-normal); /* font-size: 10px; */
 	color: var(--color-white);
-	background: linear-gradient(-45deg, #a3ffd6, #7bc9ff, #8576ff, #1c1678);
+	background: linear-gradient(-45deg, #a3ffd6, #8576ff, #1c1678);
 	background-size: 400% 400%;
-	animation: gradient 30s ease infinite;
+	animation: gradient 15s ease infinite;
 	height: 100vh;
 
 	@keyframes gradient {
@@ -347,7 +347,7 @@ fieldset {
 	background-image: radial-gradient(
 		circle at 50% 50%,
 		var(--color-dusk),
-		#62d4c5 90%
+		#8ad8d9 90%
 	);
 	display: flex;
 	flex-direction: column;
@@ -806,9 +806,9 @@ fieldset {
 .card__link {
 	text-decoration: none;
 }
-.validation-text{
-    font-size: 10px;
+.validation-text {
+	font-size: 10px;
 }
-.seen{
-    display: auto;
+.seen {
+	display: auto;
 }
