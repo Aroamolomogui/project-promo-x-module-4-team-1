@@ -44,7 +44,7 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-image: url("../images/avatar.webp");
+    background-image: url("../public/avatar.webp");
     background-position: center;
     background-size: cover;
     margin-bottom: 0.8rem;
@@ -132,7 +132,7 @@
 	width: 75px;
 	height: 75px;
 	border-radius: 50%;
-	background-image: url("../images/avatar.webp");
+	background-image: url("../public/avatar.webp");
 	background-position: center;
 	background-size: cover;
 	margin-bottom: 0.8rem;
@@ -198,9 +198,9 @@
   }
   
   .icon__www {
-    background-image: url("../images/icons/globe-solid.svg");
+    background-image: url("../public/globe-solid.svg");
   }
   
   .icon__github {
-    background-image: url("../images/icons/github.svg");
+    background-image: url("../public/github.svg");
   }
