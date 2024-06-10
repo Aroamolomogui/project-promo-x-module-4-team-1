@@ -1,4 +1,44 @@
 
+:root {
+    /* COLORS */
+  
+    --color-black: #000000;
+    --color-black-80: rgba(0, 0, 0, 0.8);
+    --color-greyish-brown: #505050;
+    --color-greyish-brown-88: rgba(62, 62, 62, 0.88);
+    --color-dusk: #403a5f;
+    --color-greyish-brown-two: #575757;
+    --color-dark: #302c42;
+    --color-error: #568c9a;
+    --color-warm-grey: #909090;
+    --color-white: #ffffff;
+    --color-dark-lilac: #8176af;
+    --color-white-50: rgba(255, 255, 255, 0.5);
+  
+    /* FONTS */
+  
+    --font-title-brand: 300 1.4rem "Poppins", sans-serif;
+    --font-title-biggest: bold 3rem "Montserrat", sans-serif;
+    --font-title-big: bold 2rem "Montserrat", sans-serif;
+    --font-title-medium: 300 1.5rem "Montserrat", sans-serif;
+    --font-text-big: normal 1.2rem "Montserrat", sans-serif;
+    --font-normal: normal 10px "Montserrat", sans-serif;
+    --font-button: bold 1rem "Montserrat", sans-serif;
+    --font-card-text: 300 0.8rem "Poppins", sans-serif;
+    --font-card-section: 300 0.8rem "Poppins", sans-serif;
+    --font-card-title: 500 1.2rem "Poppins", sans-serif;
+    --font-card-subtitle: 400 1.1rem "Poppins", sans-serif;
+    --font-card-tech: 500 1rem "Catamaran", sans-serif;
+  }
+  
+  :root {
+    font: var(--font-normal); /* font-size: 10px; */
+    color: var(--color-white);
+  }
+
+  .card__body{
+    background-color: var(--color-dark);
+  }
 .card__catalogue {
 	display: grid;
 	grid-template-columns: 40% 60%;
