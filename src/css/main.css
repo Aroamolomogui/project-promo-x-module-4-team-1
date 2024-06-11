@@ -73,11 +73,16 @@
     align-items: center;
   }
   .individual__project{
-    width: 60vw;
+    width: 250px;
+    @media screen and (min-width: 768px) {
+        width: 550px;
+    }
+
     }
 
 
   .img {
+    overflow: hidden;
 	width: 100%;
 	outline: solid 1px pink;
 	border-radius: 45px;
@@ -246,11 +251,11 @@
   }
   
   .icon__www {
-    background-image: url("./globe-solid.svg");
+    background-image: url("../globe-solid.svg");
   }
   
   .icon__github {
-    background-image: url("./github.svg");
+    background-image: url("../github.svg");
   }
 
   
