@@ -37,6 +37,10 @@
   }
 
   .card__body{
+	display: flex;
+	justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--color-dark);
   }
 
@@ -44,7 +48,7 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-image: url("../public/avatar.webp");
+    background-image: url("./avatar.webp");
     background-position: center;
     background-size: cover;
     margin-bottom: 0.8rem;
@@ -61,6 +65,7 @@
 	display: grid;
 	grid-template-columns: 40% 60%;
 	height: 200px;
+	width: 550px;
 	color: var(--color-black);
 	font: var(--font-card-text);
 
@@ -132,7 +137,7 @@
 	width: 75px;
 	height: 75px;
 	border-radius: 50%;
-	background-image: url("../public/avatar.webp");
+	background-image: url("./avatar.webp");
 	background-position: center;
 	background-size: cover;
 	margin-bottom: 0.8rem;
@@ -198,9 +203,9 @@
   }
   
   .icon__www {
-    background-image: url("../public/globe-solid.svg");
+    background-image: url("./globe-solid.svg");
   }
   
   .icon__github {
-    background-image: url("../public/github.svg");
+    background-image: url("./github.svg");
   }
