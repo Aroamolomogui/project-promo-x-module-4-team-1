@@ -80,3 +80,4 @@ server.listen(port, () => {
 const staticUrl = './src/public';
 server.use(express.static(staticUrl));
 server.use(express.static('./src/css'));
+server.use(express.static('./src/images'));
