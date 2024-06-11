@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-![AdaProTeam]()
+![AdaProTeam](https://github.com/Aroamolomogui/project-promo-x-module-4-team-1/blob/master/src/public/assets/Proyectos_Molones_screenshot.jpg)
 
 Este proyecto es una aplicación web que te permite crear tarjetas personalizadas de tus proyectos personales. Para ello, solo necesitas completar un formulario con tus datos, imagen del proyecto y foto de perfil. Además, la aplicación te permite guardar las tarjetas creadas en un catálogo para que puedas consultarlas cuando quieras.
 
