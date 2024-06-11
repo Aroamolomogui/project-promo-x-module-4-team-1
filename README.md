@@ -1,55 +1,56 @@
-# Proyecto: Página de Presentación de Proyectos con React
+# Proyectos Molones - AdaPro Team
 
 ## Descripción del Proyecto
 
-En este proyecto vamos a desarrollar una aplicación web que permite crear una página para hablar sobre un proyecto personal o uno que nos interese mucho. La aplicación permitirá introducir los datos del proyecto y obtener una vista maquetada con esta información.
+![AdaProTeam]()
 
-## Objetivos
+Este proyecto es una aplicación web que te permite crear tarjetas personalizadas de tus proyectos personales. Para ello, solo necesitas completar un formulario con tus datos, imagen del proyecto y foto de perfil. Además, la aplicación te permite guardar las tarjetas creadas en un catálogo para que puedas consultarlas cuando quieras.
 
-- **Identificación y Generación de Componentes**: Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares.
-- **Uso de React**: Aprender a usar React para crear una aplicación web sencilla.
-- **Documentación de Librerías Externas**: Aprender a buscar información en la documentación de librerías externas.
-- **Implementación de Scrum**: Implementar Scrum como marco de referencia para el desarrollo del producto, basándonos siempre en los valores de Agile como puntos clave del trabajo en equipo y la mejora continua.
-- **Comunicación del Equipo**: Mejorar la comunicación entre los miembros del equipo.
-- **Habilidades de Comunicación en Público**: Mejorar vuestras habilidades de comunicación en público al exponer el proyecto en la sesión final.
-
-## Caso de Uso
-
-Con esta web podréis mostrar que, además de maquetar, podéis crear una página web utilizando React JS. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con React JS en GitHub, algo muy valorado en las empresas a la hora de escoger candidatas para puestos de desarrolladoras web.
-
-## Especificaciones Técnicas
-
-En el desarrollo de esta aplicación web utilizaremos las siguientes tecnologías:
-
-- **Sass**: Para los estilos.
-- **Media Queries**: Para que el diseño sea adaptable al dispositivo.
-- **React**: Para la estructuración en componentes de la aplicación.
-- **Estrategia Mobile First**: Desarrollo con un enfoque Mobile First.
-- **Git**: Para el control de versiones del proyecto, utilizando ramas y pull-requests para revisar los cambios de las compañeras.
-- **GitHub Pages**: Para la publicación del resultado en Internet.
 
 ## Funcionamiento de la Aplicación
 
 La aplicación permitirá a la usuaria introducir la información en un formulario, y este texto se mostrará maquetado automáticamente en una tarjeta con la información del proyecto. La tarjeta del proyecto tendrá los siguientes campos:
 
-- **Nombre del Proyecto** (`name`)
-- **Slogan del Proyecto** (`slogan`)
-- **Tecnologías** (`technologies`)
-- **Repositorio** (`repo`)
-- **Demo** (`demo`)
-- **Descripción** (`desc`)
-- **Nombre de la Autora** (`autor`)
-- **Trabajo de la Autora** (`job`)
-- **Foto de la Autora** (`image`)
-- **Foto del Proyecto** (`photo`)
+- **Nombre del Proyecto** 
+- **Slogan del Proyecto** 
+- **Tecnologías** 
+- **Repositorio** 
+- **Demo** 
+- **Descripción** 
+- **Nombre de la Autora** 
+- **Trabajo de la Autora** 
+- **Foto de la Autora** 
+- **Foto del Proyecto** 
 
-### Interacción con la Web
+### Demo
 
-- Los campos deberán tener restricciones para su formato indicado.
-- Las modificaciones en el formulario (diseño y contenido) aparecerán automáticamente en la vista previa de la tarjeta del proyecto.
-- Toda la información del formulario se almacenará en `localStorage`, de manera que al recargar la página siga disponible.
-- Al hacer clic en el botón de "Crear Tarjeta", se enviará el formulario (`submit`) a un API que devolverá la URL de una web con la tarjeta de visita con la información rellenada.
-- Se mostrará esta URL para que la usuaria verifique si la tarjeta está bien definida.
+https://project-promo-x-module-4-team-1-1.onrender.com
 
+## Tecnologías Utilizadas
 
+- **Frontend:** HTML, SCSS, React
+- **Backend:** Node.JS, Express JS, MySQL
+- **Despliegue:** Render
 
+## Instalación del Proyecto
+
+Para instalar este proyecto en tu entorno local, sigue estos pasos:
+
+1. Clona este repositorio en tu máquina local:
+```bash
+  git clone https://github.com/Aroamolomogui/project-promo-x-module-4-team-1
+```
+
+2. Navega hasta la carpeta del proyecto.
+
+3. Instala las dependencias necesarias:
+```bash
+  npm install
+```
+
+4. Inicia el servidor frontend y backend:
+```bash
+  npm start
+```
+
+¡Listo! Ahora puedes comenzar a crear tus propias tarjetas personalizadas con este proyecto. ¡Esperamos que te diviertas!
