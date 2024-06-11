@@ -4,7 +4,7 @@ function Catalogue () {
   const [listProject, setListProject] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/list")
+    fetch("https://project-promo-x-module-4-team-1-1.onrender.com/list")
       .then((response) => response.json())
       .then((info) => {
         setListProject(info.data);
@@ -13,14 +13,13 @@ function Catalogue () {
 
   const html = listProject.map((item, i) => {
     return (
-      <a className="card__link" href={ `http://localhost:5001/detailProject/${item.idUser}` } key={ i }>
+      <a className="card__link" href={ `https://project-promo-x-module-4-team-1-1.onrender.com/detailProject/${item.idUser}` } key={ i }>
         <article className="card__catalogue">
 
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto">
-              <img src={ `${item.photo}` } alt="" />
+            <div className="card__authorPhoto">{item.photo && <img className="card__authorPhoto--img" src={item.photo} alt="" />}
             </div>
             <p className="card__job">
               { item.job }
