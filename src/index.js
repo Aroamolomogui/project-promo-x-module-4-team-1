@@ -55,7 +55,7 @@ server.post('/addProject', async (req, res) => {
 	]);
 
 	res.json({
-		cardUrl: `https://project-promo-x-module-4-team-1-1.onrender.com/${resultsAuthor.insertId}`,
+		cardUrl: `https://project-promo-x-module-4-team-1-1.onrender.com/detailProject/${resultsAuthor.insertId}`,
 		success: true,
 	});
 	conn.end();
