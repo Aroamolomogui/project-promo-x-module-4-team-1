@@ -31,7 +31,7 @@ function Main () {
     setInputData({ ...inputData, [idInput]: url });
   };
   const createCard = () => {
-    fetch("https://project-promo-x-module-4-team-1-1.onrender.com/addProject", {
+    fetch("https://project-promo-x-module-4-team-1-em81.onrender.com/addProject", {
       method: "POST",
       body: JSON.stringify(inputData),
       headers: {
